@@ -834,18 +834,26 @@
           </section>
         </section>
 
-        <!-- WRITING -->
+        <!-- RESEARCH -->
         <section
           class="page"
-          id="writing"
+          id="research"
           tabindex="-1"
-          aria-labelledby="writing-title"
+          aria-labelledby="research-title"
         >
-          <h2 id="writing-title">Writing</h2>
+          <h2 id="research-title">Research</h2>
 
-          <p class="coming-soon">
-            Essays, research, and reflections will be added here soon.
-          </p>
+          <article class="entry">
+            <h3>Behind the Boundary</h3>
+            <p class="metadata">Research project</p>
+            <p>
+              <a
+                href="https://behind-the-boundary.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View project ↗</a>
+            </p>
+          </article>
         </section>
       </main>
 
@@ -854,7 +862,7 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#artwork">Artwork</a>
-        <a href="#writing">Writing</a>
+        <a href="#research">Research</a>
       </nav>
     </div>
   </div>
@@ -888,7 +896,8 @@
         return;
       }
 
-      const requested = location.hash.slice(1);
+      const hash = location.hash.slice(1);
+      const requested = hash === "writing" ? "research" : hash;
 
       const current =
         pages.find(page => page.id === requested) || pages[0];
@@ -990,3 +999,4 @@
   </script>
 </body>
 </html>
+
